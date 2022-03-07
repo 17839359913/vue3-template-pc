@@ -1,17 +1,58 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-CN">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>xx系统</title>
+    <style>
+      #global-loading-tim {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue',
+          Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+          'Segoe UI Symbol';
+        font-size: 14px;
+        color: #5c5e65;
+      }
+
+      @keyframes g-loading-rotate-xyjs {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      #global-loading-tim img {
+        color: #ff6600;
+        width: 22px;
+        height: 22px;
+        margin-right: 14px;
+        animation: g-loading-rotate-xyjs 1s linear infinite;
+      }
+    </style>
   </head>
-  <body>
+  <body class="notranslate"> <!-- 添加 notranslate 类，禁止 chrome 翻译 -->
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>
+        We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to continue.
+      </strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+      <div id="global-loading-tim">
+        <img src="./global-loading.svg" />
+        <span>加载中...</span>
+      </div>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>

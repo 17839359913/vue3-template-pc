@@ -1,0 +1,41 @@
+version: 2.0
+project_type: node
+stages:
+  - build
+variables:
+  DIST_PATH: dist
+build-test:
+  stage: build
+  image: node:12.13.1
+  variables:
+    BUILD_ENV: test
+    DIST_PATH: dist
+  script:
+    - yarn --registry https://npm.zhenguanyu.com
+    - rm -rf dist
+    - yarn build:test
+  artifacts:
+    name: build-test
+    upload: true
+    path:
+      - dist/**
+    tags:
+      - test
+build-online:
+  stage: build
+  image: node:12.13.1
+  variables:
+    BUILD_ENV: online
+    DIST_PATH: dist
+  script:
+    - yarn --registry https://npm.zhenguanyu.com
+    - rm -rf dist
+    - yarn build
+  artifacts:
+    name: build-online
+    upload: true
+    path:
+      - dist/**
+    tags:
+      - default
+      - online

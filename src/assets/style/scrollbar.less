@@ -1,0 +1,19 @@
+// why change scrollbar ?
+// scrollbar is always displayed in some device.
+// it causes layout broken.
+// so we change strategy. we overlay scrollbar by define css.
+::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1em;
+    background: rgba(50, 50, 50, 0.3);
+}
+
+::webkit-scrollbar-track {
+    border-radius: 1em;
+    background: transparent !important;
+    // background-color: rgba(50, 50, 50, 0.1);
+}
