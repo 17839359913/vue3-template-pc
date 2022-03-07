@@ -37,14 +37,6 @@
 
 -
 
-### api 接口地址
-
-- http://apihub-test.zhenguanyu.com/project/897/interface/api
-
-api生成： 请在 ytt.config.js 文件中填写 token 字段。然后执行 `npx ytt` , 即可根据 yapi 文档网站上的数据生成 api 接口定义。
-
-> ytt文档地址：https://fjc0k.github.io/yapi-to-typescript/handbook/config.html
-
 ### 项目排期
 
 -
